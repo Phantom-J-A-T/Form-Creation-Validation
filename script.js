@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const usernameInput = document.getElementById("username");
     usernameInput.addEventListener("input", () => {
     const feedback = document.getElementById("username-feedback");
-    const trimmedValue = usernameInput.value.trim(); 
-    if ((trimmedValue.length < 3 || trimmedValue.length > 20)) {
+    const username = usernameInput.value.trim(); 
+    if ((username.length < 3 || username.length > 20)) {
         feedback.textContent = "Username must be between 3 and 20 characters.";
         feedback.style.color = "red";
         isValid = false;
@@ -34,9 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const emailInput = document.getElementById("email");
     emailInput.addEventListener("input", () => {
     const feedback = document.getElementById("email-feedback");
-    const emailValue = emailInput.value.trim();
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailValue)) {
+    const email = emailInput.value.trim();
+    if (!email.includes("@") || !email.includes(".")) {
         feedback.textContent = "Please enter a valid email address.";
         feedback.style.color = "red";
         isValid = false;
@@ -48,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function() {
  const passwordInput = document.getElementById("password");
     passwordInput.addEventListener("input", () => {
         const feedback = document.getElementById("password-feedback");
-        const passwordValue = passwordInput.value.trim();
-        if (passwordValue.length < 8 || passwordValue.length > 20) {
+        const password = passwordInput.value.trim();
+        if (password.length < 8 || password.length > 20) {
             feedback.textContent = "Password must be at least 8 characters long.";
             feedback.style.color = "red";
             isValid = false;
