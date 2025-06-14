@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         feedbackDiv.innerHTML = messages.join("<br>");
         feedbackDiv.style.color = "#dc3545"; // Bootstrap danger red
       } else {
-        feedbackDiv.textContent = "Registration Successful!";
+        feedbackDiv.textContent = "Registration successful";
         feedbackDiv.style.color = "#28a745";
       }
    
