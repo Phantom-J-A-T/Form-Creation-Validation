@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById("registration-form");
   const feedbackDiv = document.getElementById("form-feedback");
-  let IsValid = true;
+  let isValid = true;
   const messages = []
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     
     // Simulate a successful form submission
     feedbackDiv.style.display = "block";
-    if (!IsValid) {
+    if (!isValid) {
         feedbackDiv.innerHTML = messages.join("<br>");
         feedbackDiv.style.color = "#dc3545"; // Bootstrap danger red
       } else {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if ((trimmedValue.length < 3 || trimmedValue.length > 20)) {
         feedback.textContent = "Username must be between 3 and 20 characters.";
         feedback.style.color = "red";
-        IsValid = false;
+        isValid = false;
         messages.push("Username must be between 3 and 20 characters.");
     } else {
         feedback.textContent = "";
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!emailPattern.test(emailValue)) {
         feedback.textContent = "Please enter a valid email address.";
         feedback.style.color = "red";
-        IsValid = false;
+        isValid = false;
         messages.push("Please enter a valid email address.");
     } else {
         feedback.textContent = "";
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (passwordValue.length < 8 || passwordValue.length > 20) {
             feedback.textContent = "Password must be at least 8 characters long.";
             feedback.style.color = "red";
-            IsValid = false;
+            isValid = false;
             messages.push("Password must be at least 8 characters long.");
         } else {
             feedback.textContent = "";
